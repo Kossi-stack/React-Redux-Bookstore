@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Navbar from './components/Navigation';
-import Books from './redux/books/Books';
+import Navbar from './Components/Navigation';
+import Books from './Redux/Books/Books';
 import Categories from './Redux/Categories/Categories';
 
 function App() {
