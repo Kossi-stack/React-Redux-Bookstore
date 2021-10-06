@@ -2,6 +2,24 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Built
+
+- HTML
+- CSS
+- React
+- Linters (React & Redux)
+- Git
+
+## Live Demo
+Visit the live demo [here]()
+
+## Authors
+
+👤 **Kossi-Stack**
+
+- GitHub: [@kossi-stack](https://kossi-stack.github.io/Math-Magicians/)
+- LinkedIn: [kossifioklou](https://www.linkedin.com/in/kossifioklou2406/)
+
 ## Available Scripts
 
 In the project directory, you can run:
