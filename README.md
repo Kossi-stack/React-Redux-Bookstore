@@ -2,6 +2,16 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Live Demo
+Visit the live demo [here]()
+
+## Author
+
+👤 **Kossi-Stack**
+
+- GitHub: [@githubhandle](https://kossi-stack.github.io/)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/kossifioklou2406/)
+
 ## Available Scripts
 
 In the project directory, you can run:
