@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import { addBook } from '../redux/Books/Books';
+import { addBook } from './redux/Books/Books';
 
 const AddBook = () => {
   const dispatch = useDispatch();
@@ -12,8 +12,8 @@ const AddBook = () => {
     e.preventDefault();
     const newBook = {
       id: uuidv4(),
-      title: title || 'Things Fall Apart',
-      author: author || 'Chinua Achebe',
+      title: title || 'Une vie de boy',
+      author: author || 'Ferdinand OYONO',
     };
 
     dispatch(addBook(newBook));
