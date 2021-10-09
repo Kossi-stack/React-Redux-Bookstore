@@ -3,12 +3,12 @@ import axios from 'axios';
 const ADD_BOOK = 'bookStore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookStore/books/REMOVE_BOOK';
 const GET_BOOKS = 'BookStore/Books/GET_BOOKS';
-const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/HIiFLHoziImJYY3AZfQs/books/';
+const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/whgDZlKfkZhKxDtP9JO5/books';
 const initialState = [];
 
 export const removeBook = (payload) => async (dispatch) => {
   const { data } = await axios.delete(
-    `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/HIiFLHoziImJYY3AZfQs/books/${payload}`,
+    `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/whgDZlKfkZhKxDtP9JO5/books/${payload}`,
   );
   if (data) {
     dispatch({ type: REMOVE_BOOK, payload });

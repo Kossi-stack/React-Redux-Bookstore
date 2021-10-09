@@ -4,7 +4,7 @@ import thunk from 'redux-thunk';
 import booksReducer from './Books/Books';
 
 const reducer = combineReducers({
-  Books: booksReducer,
+  books: booksReducer,
 });
 
 const store = createStore(
