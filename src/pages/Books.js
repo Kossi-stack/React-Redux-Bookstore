@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import BookItem from '../components/BookItem';
 import AddNewBook from '../components/AddNewBook';
-import { addBook, removeBook, getBooks } from '../Redux/Books/books';
+import { addBook, removeBook, getBooks } from '../Redux/Books/Books';
 
 const Books = () => {
   const dispatch = useDispatch();
