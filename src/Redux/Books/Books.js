@@ -1,55 +1,63 @@
-import axios from 'axios';
+import API from '../../api';
 
 const ADD_BOOK = 'bookStore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookStore/books/REMOVE_BOOK';
-const GET_BOOKS = 'BookStore/Books/GET_BOOKS';
-const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/whgDZlKfkZhKxDtP9JO5/books';
+const GET_BOOKS = 'bookStore/books/GET_BOOKS';
+
 const initialState = [];
 
-export const removeBook = (payload) => async (dispatch) => {
-  const { data } = await axios.delete(
-    `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/whgDZlKfkZhKxDtP9JO5/books/${payload}`,
-  );
-  if (data) {
-    dispatch({ type: REMOVE_BOOK, payload });
-  }
-};
-
-export const addBook = (payload) => async (dispatch) => {
-  const { data } = await axios.post(
-    url,
-    payload,
-    {
-      headers: {
-        'Content-Type': 'application/json;charset=UTF-8',
-      },
-    },
-  );
-  if (data) {
-    dispatch({ type: ADD_BOOK, payload });
-  }
-};
-
-export const getBooks = () => async (dispatch) => {
-  const { data } = await axios.get(url);
-  const formattedBooks = [];
-  Object.keys(data).forEach((key) => {
-    if (key) {
-      formattedBooks.push({ ...data[key][0], item_id: key });
+export const addBook = (payload) => (dispatch) => {
+  API.postBook(payload).then(async (response) => {
+    if (response.data === 'Created') {
+      dispatch({
+        type: ADD_BOOK,
+        payload,
+      });
     }
   });
-  dispatch({ type: GET_BOOKS, payload: formattedBooks });
+};
+
+export const removeBook = (payload) => (dispatch) => {
+  API.deleteBook(payload).then(async (response) => {
+    if (response.data === 'The book was deleted successfully!') {
+      dispatch({
+        type: REMOVE_BOOK,
+        payload,
+      });
+    }
+  });
+};
+
+export const getBooks = () => (dispatch) => {
+  API.getBooks()
+    .then((response) => response.data)
+    .then((data) => {
+      const books = Object.entries(data).map(([key, value]) => {
+        const [booksArray] = value;
+        return {
+          item_id: key,
+          ...booksArray,
+        };
+      });
+
+      dispatch({
+        type: GET_BOOKS,
+        payload: books,
+      });
+    });
 };
 
 const reducer = (state = initialState, action) => {
-  const { type, payload } = action;
-  switch (type) {
+  switch (action.type) {
     case ADD_BOOK:
-      return [...state, payload];
+      return [...state, action.payload];
+
     case REMOVE_BOOK:
-      return state.filter((book) => book.item_id !== payload);
+      return state.filter((book) => book.item_id !== action.payload);
+
     case GET_BOOKS:
-      return payload;
+      return [...state, ...action.payload] || [...state, []];
+
     default:
       return state;
   }

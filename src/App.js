@@ -1,20 +1,15 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import './App.css';
-import Navbar from './components/Navbar';
-import BookList from './components/BookList';
-import Categories from './components/Categories';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Header from './components/Header';
+import Books from './pages/Books';
+import Categories from './pages/Categories';
 
 const App = () => (
   <Router>
-    <Navbar />
+    <Header />
     <Switch>
-      <Route exact path="/">
-        <BookList />
-      </Route>
-      <Route path="/categories">
-        <Categories />
-      </Route>
+      <Route exact path="/" component={Books} />
+      <Route exact path="/categories" component={Categories} />
     </Switch>
   </Router>
 );
