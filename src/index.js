@@ -4,11 +4,12 @@ import { Provider } from 'react-redux';
 import App from './App';
 import store from './Redux/configureStore';
 
+
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
+    <Provider store={store}>
       <App />
-    </Router>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root'),
 );
