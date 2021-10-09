@@ -3,7 +3,7 @@ import {
 } from 'redux';
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
-import bookReducer from './books/books';
+import bookReducer from './Books/books';
 
 const reducer = combineReducers({
   books: bookReducer,
