@@ -3,7 +3,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Live Demo
-Visit the live demo [here]()
+Visit the live demo [here](https://github.com/Kossi-stack/React-Redux-Bookstore/)
 
 ## Author
 
