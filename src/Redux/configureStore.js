@@ -4,12 +4,12 @@ import thunk from 'redux-thunk';
 import booksReducer from './Books/Books';
 
 const reducer = combineReducers({
- Books: booksReducer,
+  Books: booksReducer,
 });
 
 const store = createStore(
   reducer,
-  applyMiddleware(logger, thunk)
+  applyMiddleware(logger, thunk),
 );
 
 export default store;
