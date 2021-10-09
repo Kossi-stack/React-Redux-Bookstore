@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => (
-  <nav className="navbar navbar-expand-lg navbar-light bg-light m-4">
+  <nav className="navbar navbar-expand-lg navbar-light bg-light ">
     <div className="container-fluid">
       <Link className="navbar-brand  fw-bold" to="/">
         <h4 className="rangi"> Bookstore CMS </h4>

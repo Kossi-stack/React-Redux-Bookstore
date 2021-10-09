@@ -23,6 +23,7 @@ const AddBook = () => {
 
   return (
     <form onSubmit={submitBookToStore} className="row p-3 input">
+      <hr className="horizontal" />
       <div className="row input">
         <h4 className="text-secondary">ADD NEW BOOK</h4>
         <div className="form">
