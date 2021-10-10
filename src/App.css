@@ -238,14 +238,20 @@ button {
 
 .justify-content-between {
   justify-content: space-between;
+  margin: 15rem;
 }
 
 .navbar-nav > li > a {
-  margin: 3rem;
+  margin: 0.5rem;
   line-height: 20px;
 }
 
 .container-fluid {
-  border: 1px solid #ddd;
-  padding: 0 11rem 0 12.5rem;
+  border: 3px solid #fff;
+  padding: 0 11.5rem 0 12.5rem;
+  background-color: #fff;
+}
+
+.navbar {
+  padding-top: 0;
 }
