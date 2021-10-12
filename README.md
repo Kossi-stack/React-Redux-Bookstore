@@ -1,3 +1,8 @@
+![](https://img.shields.io/badge/Microverse-blueviolet)
+
+###  Book-store
+![screenshot](./src/react-redux.JPG)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
